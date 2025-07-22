@@ -1,0 +1,12 @@
+services:
+    ollama:
+        build: .
+        container_name: 'ollama-container'
+        ports:
+        - '11434:11434'
+        volumes:
+        - ollama_data:/Users/tferrer/repos/ollama-volume
+        restart: unless-stopped
+
+volumes:
+    ollama_data:
